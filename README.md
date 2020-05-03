@@ -18,7 +18,7 @@ Here's a table of opcodes used:
 ![InstructionSet](../assets/Instructions.jpeg?raw=true)
 
 The machine cycle consists of 6 clock cycles (t0:t5) divided as follows:
-- **Fetch Cycle:** Spans from t0 to t2 and must be implemented for each instruction.
+- **Fetch Cycle:** Spans from t0 to t2 and must be implemented for each instruction.\
 - **Execution Cycle:** Spans from t3 to t5. Depends on the instruction to be executed :D
 
 
@@ -26,18 +26,19 @@ The machine cycle consists of 6 clock cycles (t0:t5) divided as follows:
 
 The pre-loaded program in the memory component is as follows:
 
-> LDA @9h
-> OUT
-> ADD @Ah
-> OUT
-> SUB @Bh
-> OUT
-> HLT
+> LDA @9h\
+> OUT\
+> ADD @Ah\
+> OUT\
+> SUB @Bh\
+> OUT\
+> HLT\
 
 Content of data section of the memory:
-Address 0x9 --> 6
-Address 0xA --> 8
-Address 0xB --> 3
+
+Address 0x9 --> 6\
+Address 0xA --> 8\
+Address 0xB --> 3\
 
 Here are snapshots of the simulation test bench. 
 
@@ -47,7 +48,7 @@ Here are snapshots of the simulation test bench.
 ![LDA](../assets/LDA.jpg?raw=true)
 ![LDA_OUT](../assets/OUT_LDA.jpg?raw=true)
 
-*Note:* Here, you can see the output instruction is delaying by 1 cycle (it should give output at t3, not t4).
+*Note:* Here, you can see the output instruction is delaying by 1 cycle (it should give output at t3, not t4).\
 However, the controller gives signals in the right time. So, I'm still to find out the reason behind the delayed response.
 
 **ADD**
