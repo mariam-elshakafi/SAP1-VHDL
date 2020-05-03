@@ -8,7 +8,8 @@ The architecture used in this project is based on this image *(More info. can be
 
 ![Architecture](../assets/Architecture.jpeg?raw=true)
 
-Although, I used MAR only for addressing, not as an input register; as INPUT operation is not implemented.
+Although, I used MAR only for addressing, not as an input register; as INPUT operation is not implemented.\
+Also I implemented all control signals as active high.
 
 ### Instruction Set
 SAP1 has a limited instruction set. It can only do basic operations: Add and Sub namely.
@@ -18,7 +19,7 @@ Here's a table of opcodes used:
 ![InstructionSet](../assets/Instructions.jpeg?raw=true)
 
 The machine cycle consists of 6 clock cycles (t0:t5) divided as follows:
-- **Fetch Cycle:** Spans from t0 to t2 and must be implemented for each instruction.\
+- **Fetch Cycle:** Spans from t0 to t2 and must be implemented for each instruction. 
 - **Execution Cycle:** Spans from t3 to t5. Depends on the instruction to be executed :D
 
 
@@ -32,13 +33,13 @@ The pre-loaded program in the memory component is as follows:
 > OUT\
 > SUB @Bh\
 > OUT\
-> HLT\
+> HLT
 
 Content of data section of the memory:
 
 Address 0x9 --> 6\
 Address 0xA --> 8\
-Address 0xB --> 3\
+Address 0xB --> 3
 
 Here are snapshots of the simulation test bench. 
 
@@ -48,7 +49,7 @@ Here are snapshots of the simulation test bench.
 ![LDA](../assets/LDA.jpg?raw=true)
 ![LDA_OUT](../assets/OUT_LDA.jpg?raw=true)
 
-*Note:* Here, you can see the output instruction is delaying by 1 cycle (it should give output at t3, not t4).\
+*Note:* Here, you can see the output instruction is delaying by 1 cycle (it should give output at t3, not t4). 
 However, the controller gives signals in the right time. So, I'm still to find out the reason behind the delayed response.
 
 **ADD**
@@ -61,7 +62,7 @@ Output is equal to 0xE (14) which is (6 + 8)
 
 **SUB**
 
-![SUB](../assets/SUB.jpg?raw=true)
+![SUB](../assets/SUB.png?raw=true)
 ![SUB_OUT](../assets/OUT_SUB.jpg?raw=true)
 
 Output is equal to 0xB (11) which is (14 - 3)
